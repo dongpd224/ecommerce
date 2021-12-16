@@ -62,7 +62,6 @@
     display: flex;
     align-items: flex-start;
     flex-shrink: 0;
-    margin-right: 16px;
 }
 .logo{
     width: 60px;
