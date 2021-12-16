@@ -3,9 +3,7 @@
 
 
 .middle__wrap{
-    display: flex;
     padding: 18px 0px 8px;
-    height: auto;
     position: relative;
     z-index: 2;
     -webkit-box-align: center;
@@ -13,6 +11,7 @@
 }
 .middle__left_container{
     display: flex;
+    overflow: hidden;
     flex: 1 1 0%;
     -webkit-box-align: center;
     align-items: center;
@@ -26,6 +25,7 @@
     display: flex;
     position: relative;
     box-shadow: rgb(98 98 98 / 50%) 0px 1px 2px 0px;
+    overflow: hidden;
 }
 .formsearch__form input{
     border: 0px;
@@ -34,6 +34,7 @@
     border-radius: 2px 0px 0px 2px;
     flex: 1 1 0%;
     outline: none;
+
 }
 .formsearch__button{
     cursor: pointer;
@@ -60,7 +61,6 @@
 .logo__menu{
     display: flex;
     align-items: flex-start;
-    flex-basis: 190px;
     flex-shrink: 0;
     margin-right: 16px;
 }
@@ -119,7 +119,7 @@
     line-height: 20px;
     min-width: 120px;
 }
-.arrow_down_icon img{
+.arrow_down_icon{
     width: 16px;
     height: 16px;
 }
