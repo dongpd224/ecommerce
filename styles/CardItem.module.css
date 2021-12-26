@@ -1,6 +1,28 @@
-.card_item{
-    cursor: pointer;
+.card_item {
+    height: 336.375px;
 }
-.card_item:hover{
-    box-shadow: 0px 0px 20px 0 rgb(0 0 0 / 5%), 0 0px 20px 0 rgb(0 0 0 / 5%)
+.card_item:hover {
+  box-shadow: 0px 0px 20px 0 rgb(0 0 0 / 5%), 0 0px 20px 0 rgb(0 0 0 / 5%);
+}
+.name {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.name span {
+  font-size: 13px;
+  font-weight: 400;
+  margin: 0px 0px 4 px;
+  line-height: 20px;
+  word-break: break-word;
+}
+.price_discount {
+  margin-top: 4 px;
+  color: rgb(56, 56, 61);
+}
+.price_discount__price{
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
 }

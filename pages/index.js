@@ -1,19 +1,13 @@
 import Layout from "../components/Layout"
 import CardItem from "../components/CardItem"
+import CardList from '../components/CardList'
 
 export default function Home() {
   return (
     <div>
       <Layout>
         <div className="container">
-          <div className="row">
-            <CardItem />
-            <CardItem />
-            <CardItem />
-            <CardItem />
-            <CardItem />
-            <CardItem />
-          </div>
+          <CardList />
         </div>
 
 
