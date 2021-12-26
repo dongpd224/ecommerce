@@ -1,4 +1,4 @@
-import style from './Nav.module.css'
+import style from '../styles/Nav.module.css'
 import Image from 'next/image'
 import * as Icon from './Icon'
 import Link from 'next/link'
