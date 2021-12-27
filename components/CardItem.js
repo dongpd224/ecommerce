@@ -2,9 +2,9 @@ import style from '../styles/CardItem.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 
-function CardItem(){
+function CardItem(props){
     return(
-        <div className={`${style.card_item} d-flex align-items-center`}>
+        <div className={`${style.card_item} ${props.responsive}`}>
             <Link href='/'>
                 <a>
                     <div className={style.thumbnail_wrapper}>

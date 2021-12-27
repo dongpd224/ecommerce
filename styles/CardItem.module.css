@@ -1,5 +1,7 @@
 .card_item {
     height: 336.375px;
+    overflow: hidden;
+    margin-top: 4px;
 }
 .card_item:hover {
   box-shadow: 0px 0px 20px 0 rgb(0 0 0 / 5%), 0 0px 20px 0 rgb(0 0 0 / 5%);
