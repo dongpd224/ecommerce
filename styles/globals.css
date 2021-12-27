@@ -29,3 +29,17 @@ input{
 .primary-background-color{
   background-color: var(--primary-color);
 }
+.resource-form{
+  margin-top: 100px;
+}
+.resrouce-list{
+  columns: 2 auto;
+}
+.active-resource {
+  background-color: #3140aa;
+  padding: 50px;
+  text-align: center;
+  color: white;
+  height:  300px;
+
+}
