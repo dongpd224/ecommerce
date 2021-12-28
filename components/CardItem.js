@@ -2,9 +2,9 @@ import style from '../styles/CardItem.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 
-function CardItem(props){
+function CardItem({data , responsive}){
     return(
-        <div className={`${style.card_item} ${props.responsive}`}>
+        <div className={`${style.card_item} ${responsive}`}>
             <Link href='/'>
                 <a>
                     <div className={style.thumbnail_wrapper}>
@@ -15,7 +15,7 @@ function CardItem(props){
                             height={200} />
                     </div>
                     <div className={style.name}>
-                        <span>Keo Dán Giày Nhiệt XIMO Trong Suốt Siêu Dính Dùng Không Tổn Thương Da XKDG06</span>
+                        <span>{data.name}</span>
                     </div>
                     <div className={`${style.price_discount} "d-flex align-items-center"`}>
                         <div className={`${style.price_discount__price}`}>29.000đ</div>

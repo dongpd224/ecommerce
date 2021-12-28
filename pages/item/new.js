@@ -5,7 +5,7 @@ import { useState } from "react"
 
 const DEFAULT_DATA = {
     name: "",
-    discount_price: "",
+    discount_price: 0,
     img_link: ""
 }
 
@@ -24,13 +24,9 @@ function NewItem() {
     }
 
     const submitForm = () => {
-        
-        const createResource = (formData) => {
-            axios.post("../api/resources", formData)
+            axios.post("../api/resources", form)
                  .then(_ => router.push("/"))
                 .catch(err => alert(err?.response?.data));
-        }
-        onFormSubmit(form);
     }
     return (
         <Layout>
