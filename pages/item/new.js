@@ -6,11 +6,11 @@ import { useState } from "react"
 const DEFAULT_DATA = {
     name: "",
     discount_price: "",
-    img_link: "",
-    priority: "1",
-    timeToFinish: 60,
+    img_link: ""
 }
+
 function NewItem() {
+    const router = useRouter()
     const [form, setForm] = useState(DEFAULT_DATA);
 
     const resetForm = () => setForm(DEFAULT_DATA)
@@ -24,6 +24,12 @@ function NewItem() {
     }
 
     const submitForm = () => {
+        
+        const createResource = (formData) => {
+            axios.post("../api/resources", formData)
+                 .then(_ => router.push("/"))
+                .catch(err => alert(err?.response?.data));
+        }
         onFormSubmit(form);
     }
     return (
@@ -68,37 +74,6 @@ function NewItem() {
                             placeholder="Nextjs.com" />
                     </div>
                 </div>
-
-                <div className="field">
-                    <label className="label">Piority</label>
-                    <div className="control">
-                        <div className="select">
-                            <select
-                                value={form.priority}
-                                onChange={handleChange}
-                                name="priority"
-                            >
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="field mt-4">
-                    <label className="label">Time to finish</label>
-                    <div className="control">
-                        <input className="input"
-                            value={form.timeToFinish}
-                            onChange={handleChange}
-                            name="timeToFinish"
-                            type="number"
-                            placeholder="60" />
-                    </div>
-                    <p className="help">Time is in minutes</p>
-                </div>
-
                 <div className="field is-grouped mt-4">
                     <div className="control">
                         <button
