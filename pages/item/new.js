@@ -24,8 +24,8 @@ function NewItem() {
     }
 
     const submitForm = () => {
-            axios.post("../api/resources", form)
-                 .then(_ => router.push("/"))
+            axios.post("http://localhost:3000/api/items", form)
+                 .then(_ => alert(response.data))
                 .catch(err => alert(err?.response?.data));
     }
     return (
