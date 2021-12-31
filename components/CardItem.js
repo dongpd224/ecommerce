@@ -9,7 +9,7 @@ function CardItem({data , responsive}){
                 <a>
                     <div className={style.thumbnail_wrapper}>
                         <Image
-                            src="https://salt.tikicdn.com/cache/w1200/ts/product/5b/8d/63/89780a394c7f879d285641d31b256041.jpg"
+                            src={data.img_link}
                             alt="Img"
                             width={200}
                             height={200} />
@@ -18,7 +18,7 @@ function CardItem({data , responsive}){
                         <span>{data.name}</span>
                     </div>
                     <div className={`${style.price_discount} "d-flex align-items-center"`}>
-                        <div className={`${style.price_discount__price}`}>29.000đ</div>
+                        <div className={`${style.price_discount__price}`}>{data.price_discount}</div>
                     </div>
                 </a>
             </Link>
