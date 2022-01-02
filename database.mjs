@@ -7,10 +7,9 @@ async function setup() {
             filename: './mydb.sqlite',
             driver: sqlite3.Database,
         });
-        await db.migrate({ force: 'last' })
-
-        const items = await db.all('SELECT * FROM items')
-        console.log(JSON.stringify(items))
+        const update = await db.run('UPDATE items SET star=? WHERE id=?', '5','7' )
+        const star = await db.run('SELECT * FROM items')
+        console.log(JSON.stringify(star))
     }
 
     catch (err) {

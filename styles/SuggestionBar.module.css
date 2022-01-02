@@ -1,0 +1,18 @@
+.suggestion_wrapper {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: #efefef;
+}
+
+.suggestion_header {
+  background-color: rgb(255, 255, 255);
+  margin-left: -12px;
+  margin-right: -12px;
+  margin-bottom: 4px;
+  border-radius: 4px;
+  padding: 10px 16px;
+  font-size: 20px;
+  line-height: 28px;
+}

@@ -2,6 +2,7 @@ import style from '../styles/CardItem.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 import EncodePrice from './untils/EncodePrice'
+import StarRatingComponent from 'react-star-rating-component';
 function CardItem({data , responsive}){
     return(
         <div className={`${style.card_item} ${responsive}`}>
@@ -17,6 +18,7 @@ function CardItem({data , responsive}){
                     <div className={style.name}>
                         <span>{data.item_name}</span>
                     </div>
+                    <StarRatingComponent starCount={5} value={data.star}/>
                     <div className={`${style.price_discount} "d-flex align-items-center"`}>
                         <div className={`${style.price_discount__price}`}>{EncodePrice(data.discount_price)}</div>
                     </div>

@@ -1,0 +1,15 @@
+.banner{
+    min-height: 274px;  
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.left_banner{
+    margin: 0 0 0 -12px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.right_banner{
+    margin: 0 -12px 0 0;
+    border-radius: 4px;
+    overflow: hidden;
+}
