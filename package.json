@@ -2,7 +2,7 @@
   "name": "ecommerce",
   "private": true,
   "scripts": {
-    "dev": "node ./database.mjs && next dev",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

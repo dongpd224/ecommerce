@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { useState } from "react"
 
 const DEFAULT_DATA = {
-    name: "",
+    item_name: "",
     discount_price: 0,
     img_link: ""
 }
@@ -38,9 +38,9 @@ function NewItem() {
                     <div className="control">
                         <input
                             className="input"
-                            value={form.name}
+                            value={form.item_name}
                             onChange={handleChange}
-                            name="name"
+                            name="item_name"
                             type="text"
                             placeholder="Learn Nextjs and Sanity IO" />
                     </div>

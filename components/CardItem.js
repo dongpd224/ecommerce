@@ -18,7 +18,6 @@ function CardItem({data , responsive}){
                         <span>{data.item_name}</span>
                     </div>
                     <div className={`${style.price_discount} "d-flex align-items-center"`}>
-                        {console.log(EncodePrice(data.discount_price))}
                         <div className={`${style.price_discount__price}`}>{EncodePrice(data.discount_price)}</div>
                     </div>
                 </a>

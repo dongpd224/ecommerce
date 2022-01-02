@@ -9,8 +9,6 @@ export default function Home({items}) {
         <div className="container">
           <CardList items={items}/>
         </div>
-
-
       </Layout>
     </div>
   )
