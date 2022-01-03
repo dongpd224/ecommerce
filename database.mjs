@@ -7,7 +7,7 @@ async function setup() {
             filename: './mydb.sqlite',
             driver: sqlite3.Database,
         });
-        const update = await db.run('UPDATE items SET star=? WHERE id=?', '5','7' )
+        const update = await db.run('UPDATE items SET star=? WHERE id=?', '5','8' )
         const star = await db.run('SELECT * FROM items')
         console.log(JSON.stringify(star))
     }

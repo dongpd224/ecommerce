@@ -16,10 +16,11 @@ export default async function getAllItems(req: NextApiRequest, res: NextApiRespo
     try {
 
         const item = req.body
-        const result = await db.run('INSERT INTO items(item_name, discount_price,img_link) VALUES (:item_name, :discount_price,:img_link)', {
+        const result = await db.run('INSERT INTO items(item_name, discount_price,img_link,star) VALUES (:item_name, :discount_price,:img_link,:star)', {
         ':item_name': item.item_name,
         ':discount_price' : item.discount_price,
-        ':img_link' : item.img_link
+        ':img_link' : item.img_link,
+        ':star': item.star
       })
         return res.send("Data has been updated");
   

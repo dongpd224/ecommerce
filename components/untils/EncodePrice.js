@@ -33,7 +33,7 @@ function EncodePrice(price) {
     }
     if (thoudsand){
         if(hundred){
-            return `${AutoAddZero(thoudsand)}.${hundred}00`
+            return `${thoudsand}.${hundred}00`
         }
         return `${thoudsand}.000`
     }

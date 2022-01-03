@@ -20,7 +20,7 @@ function CardItem({data , responsive}){
                     </div>
                     <StarRatingComponent starCount={5} value={data.star}/>
                     <div className={`${style.price_discount} "d-flex align-items-center"`}>
-                        <div className={`${style.price_discount__price}`}>{EncodePrice(data.discount_price)}</div>
+                        <div className={`${style.price_discount__price}`}>{EncodePrice(data.discount_price)} đ</div>
                     </div>
                 </a>
             </Link>

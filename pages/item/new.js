@@ -6,7 +6,8 @@ import { useState } from "react"
 const DEFAULT_DATA = {
     item_name: "",
     discount_price: 0,
-    img_link: ""
+    img_link: "",
+    star: 5,
 }
 
 function NewItem() {
@@ -52,6 +53,18 @@ function NewItem() {
                             value={form.discount_price}
                             onChange={handleChange}
                             name="discount_price"
+                            type="number"
+                            placeholder="0">
+                        </input>
+                    </div>
+                </div>
+                <div className="field">
+                    <label className="label">Star</label>
+                    <div className="control">
+                        <input className="input"
+                            value={form.star}
+                            onChange={handleChange}
+                            name="star"
                             type="number"
                             placeholder="0">
                         </input>
