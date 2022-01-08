@@ -11,7 +11,7 @@ function CardItem({data , responsive}){
                     <div className={style.thumbnail_wrapper}>
                         <Image
                             src={data.img_link}
-                            alt="Img"
+                            alt={data.item_name}
                             width={200}
                             height={200} />
                     </div>
