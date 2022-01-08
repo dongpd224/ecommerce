@@ -1,5 +1,4 @@
 import Layout from "../components/Layout"
-import CategoryTabBar from "../components/CategoryTabBar"
 import CardList from '../components/CardList'
 import Banner from "../components/Banner"
 import SuggestionBar from "../components/SuggestionBar"
@@ -8,7 +7,6 @@ export default function Home({items}) {
   return (
     <div>
       <Layout>
-        <CategoryTabBar />
         <Banner />
         <SuggestionBar />
         <div className="container">

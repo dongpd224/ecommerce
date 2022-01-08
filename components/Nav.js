@@ -2,8 +2,10 @@ import style from '../styles/Nav.module.css'
 import Image from 'next/image'
 import * as Icon from './Icon'
 import Link from 'next/link'
+import CategoryTabBar from './CategoryTabBar'
 function Nav() {
     return (
+        <>
         <div className="container-fluid primary-background-color">
             <div className="container">
                 <div className={`${style.middle__wrap} row `}>
@@ -123,6 +125,8 @@ function Nav() {
                 </div>
             </div>
         </div>
+        <CategoryTabBar />
+        </>
     )
 }
 export default Nav

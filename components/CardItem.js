@@ -6,7 +6,7 @@ import StarRatingComponent from 'react-star-rating-component';
 function CardItem({data , responsive}){
     return(
         <div className={`${style.card_item} ${responsive}`}>
-            <Link href='/'>
+            <Link href={`/item/${data.id}`}>
                 <a>
                     <div className={style.thumbnail_wrapper}>
                         <Image
