@@ -25,79 +25,83 @@ function NewItem() {
     }
 
     const submitForm = () => {
-            axios.post("http://localhost:3000/api/items", form)
-                 .then(_ => alert(response.data))
-                .catch(err => alert(err?.response?.data));
+        axios.post("http://localhost:3000/api/items", form)
+            .then(_ => alert(response.data))
+            .catch(err => alert(err?.response?.data));
     }
     return (
         <Layout>
-            <div className="container">
+            <div className="container mt-4">
                 <h1 className="title text-center">Add New Item</h1>
+                <div className="row d-flex justify-content-center">
+                    <div className="col-lg-6">
+                        <div className="mt-4">
+                            <label className="label">Name</label>
+                            <div className="control">
+                                <input
+                                    className="form-control form-control-lg"
+                                    value={form.item_name}
+                                    onChange={handleChange}
+                                    name="item_name"
+                                    type="text"
+                                    placeholder="Learn Nextjs and Sanity IO" />
+                            </div>
+                        </div>
+                        <div className="mt-4">
+                            <label className="label">Discount Price</label>
+                            <div className="control">
+                                <input className="form-control form-control-lg"
+                                    value={form.discount_price}
+                                    onChange={handleChange}
+                                    name="discount_price"
+                                    type="number"
+                                    placeholder="0">
+                                </input>
+                            </div>
+                        </div>
+                        <div className="mt-4">
+                            <label className="label">Star</label>
+                            <div className="control">
+                                <input className="form-control form-control-lg"
+                                    value={form.star}
+                                    onChange={handleChange}
+                                    name="star"
+                                    type="number"
+                                    placeholder="0">
+                                </input>
+                            </div>
+                        </div>
 
-                <div className="field mt-4">
-                    <label className="label">Name</label>
-                    <div className="control">
-                        <input
-                            className="input"
-                            value={form.item_name}
-                            onChange={handleChange}
-                            name="item_name"
-                            type="text"
-                            placeholder="Learn Nextjs and Sanity IO" />
-                    </div>
-                </div>
-                <div className="field">
-                    <label className="label">Discount Price</label>
-                    <div className="control">
-                        <input className="input"
-                            value={form.discount_price}
-                            onChange={handleChange}
-                            name="discount_price"
-                            type="number"
-                            placeholder="0">
-                        </input>
-                    </div>
-                </div>
-                <div className="field">
-                    <label className="label">Star</label>
-                    <div className="control">
-                        <input className="input"
-                            value={form.star}
-                            onChange={handleChange}
-                            name="star"
-                            type="number"
-                            placeholder="0">
-                        </input>
+                        <div className="mt-4">
+                            <label className="label">Image link</label>
+                            <div className="control">
+                                <input
+                                    className="form-control form-control-lg"
+                                    onChange={handleChange}
+                                    name="img_link"
+                                    value={form.img_link}
+                                    type="text"
+                                    placeholder="Nextjs.com" />
+                            </div>
+                        </div>
+                        <div className="mt-4 d-flex justify-content-start">
+                            <div className="control me-3">
+                                <button
+                                    type="submit"
+                                    className="btn btn-primary btn-lg"
+                                    onClick={submitForm}
+                                >Submit</button>
+                            </div>
+                            <div className="control">
+                                <button
+                                    className="btn btn-outline-secondary btn-lg"
+                                    onClick={resetForm}
+                                >Reset</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div className="field mt-4">
-                    <label className="label">Image link</label>
-                    <div className="control">
-                        <input
-                            className="input"
-                            onChange={handleChange}
-                            name="img_link"
-                            value={form.img_link}
-                            type="text"
-                            placeholder="Nextjs.com" />
-                    </div>
-                </div>
-                <div className="field is-grouped mt-4">
-                    <div className="control">
-                        <button
-                            type="submit"
-                            className="button is-link"
-                            onClick={submitForm}
-                        >Submit</button>
-                    </div>
-                    <div className="control">
-                        <button
-                            className="button is-link is-light"
-                            onClick={resetForm}
-                        >Reset</button>
-                    </div>
-                </div>
             </div>
         </Layout>
     )

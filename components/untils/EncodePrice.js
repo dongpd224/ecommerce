@@ -24,7 +24,7 @@ function EncodePrice(price) {
             if(hundred){
                 return `${million}.${AutoAddZero(thoudsand)}.${hundred}00`
             }
-            return `${million}.${AutoAddZero(thoudsand)}000`
+            return `${million}.${AutoAddZero(thoudsand)}.000`
         }
         if(hundred){
             return `${million}.000.${hundred}00`
