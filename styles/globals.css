@@ -44,5 +44,9 @@ input{
   text-align: center;
   color: white;
   height:  300px;
-
+}
+@media (min-width: 1260px) {
+  .container{
+      max-width: 1240px;
+  }
 }

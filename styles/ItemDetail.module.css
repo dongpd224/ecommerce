@@ -1,0 +1,16 @@
+.body{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 16px;
+}
+.wrapper{
+    margin-bottom: 16px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+}
+.product_image{
+    padding: 16px 0px 16px 16px;
+    position: relative;
+}
