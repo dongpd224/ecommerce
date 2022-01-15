@@ -12,4 +12,24 @@ import DiChoSieuSale from '../assets/dichosieusale_icon.png'
 import HangMoi from '../assets/hangmoi_icon.png'
 import XuHuongThoiTrang from '../assets/xuhuongthoitrang_icon.png'
 import FreeshipKhongGioiHan from '../assets/freeshipkhonggioihan_icon.png'
-export {Logo, SearchIcon,ProfileIcon ,ArrowDownIcon , CartIcon ,FreeshipIcon, DanhChoBan, ChiTu11k,DealSieuHot,ReVoDoi,DiChoSieuSale,HangMoi,XuHuongThoiTrang,FreeshipKhongGioiHan}
+import TikiCard from '../assets/tiki_card.png'
+import FreeshipBlueIcon from '../assets/freeship_blue_icon.png'
+import ArrowRightBlue from '../assets/arrow_right_blue.png'
+export {Logo, 
+    SearchIcon,
+    ProfileIcon ,
+    ArrowDownIcon ,
+     CartIcon ,
+     FreeshipIcon, 
+     DanhChoBan,
+     ChiTu11k,
+     DealSieuHot,
+     ReVoDoi,
+     DiChoSieuSale,
+     HangMoi,
+     XuHuongThoiTrang,
+     FreeshipKhongGioiHan,
+     TikiCard,
+     FreeshipBlueIcon,
+     ArrowRightBlue
+    }

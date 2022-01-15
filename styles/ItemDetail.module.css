@@ -1,16 +1,186 @@
-.body{
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 16px;
+.body {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 16px;
 }
-.wrapper{
-    margin-bottom: 16px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 4px;
+.wrapper {
+  margin-bottom: 16px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 4px;
 }
-.product_image{
-    padding: 16px 0px 16px 16px;
-    position: relative;
+.product_image {
+  padding: 16px 0px 16px 16px;
+  position: relative;
+}
+.product_content_wrapper {
+  display: flex;
+}
+.product_seperate {
+  width: 1px;
+  height: 100%;
+  background-color: #efefef;
+  background: rgb(242, 242, 242);
+  flex-shrink: 0;
+}
+.product_content {
+  padding-left: 24px;
+  width: 100%;
+}
+.product_content_header {
+  padding: 16px 28px 6px 0px;
+}
+.product_content_brand {
+  display: flex;
+  margin-top: 8px;
+  font-size: 14px;
+}
+.product_content_title {
+  width: 100%;
+  margin: 0px 0px 4px;
+  color: rgb(36, 36, 36);
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 32px;
+}
+.product_content_title div {
+  display: block;
+  width: 100%;
+}
+.product_content_rating {
+  display: flex;
+}
+.product_stars {
+  font-size: 20px;
+  margin-right: 4px;
+}
+.product_rates {
+  line-height: 34px;
+  display: block;
+  cursor: pointer;
+  color: rgb(120, 120, 120);
+  font-size: 15px;
+}
+.product_rates span {
+  padding-left: 8px;
+  border-left: 1px solid rgb(194, 194, 194);
+}
+
+.product_content_body {
+  padding: 0px 24px 0px 0px;
+}
+.product_content_body_left {
+  padding-right: 12px;
+  position: relative;
+}
+.product_content_body_right {
+  padding-bottom: 20px;
+  position: relative;
+}
+.product_content_price {
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  background-color: rgb(250, 250, 250);
+  padding: 0px 16px 12px;
+}
+.product_content_price__value {
+  padding-top: 12px;
+  display: flex;
+  align-items: flex-end;
+  color: rgb(56, 56, 61);
+}
+.product_content_price__value span {
+  font-size: 32px;
+  line-height: 40px;
+  margin-right: 8px;
+  font-weight: 500;
+}
+.product_content_price_offer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 12px;
+}
+.product_content_price_offer__item {
+  position: relative;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+.product_content_price_offer__item span {
+  margin-left: 4px;
+  line-height: 1.4rem;
+  font-size: 14px;
+}
+
+.product_content_coupon {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 16px;
+  border-top: 1px solid rgb(242, 242, 242);
+  padding-top: 16px;
+}
+.product_content_coupon__text span {
+  font-size: 15px;
+  font-weight: 500;
+  color: rgb(36, 36, 36);
+  flex: 1 1 0%;
+  cursor: pointer;
+}
+.product_content_coupon__tags{
+    display: flex;
+    padding: 0px 4px 0px 0px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+.product_content_coupon__tag_arrow{
+    cursor: pointer;
+    margin-bottom: -2px;
+}
+.product_content_coupon__tag {
+  cursor: pointer;
+  padding: 3px 12px;
+  border: 1px solid rgb(13, 92, 182);
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+  color: rgb(13, 92, 182);
+  position: relative;
+  margin-right: 8px;
+}
+.product_content_coupon__tag::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: rgb(255, 255, 255);
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent rgb(13, 92, 182) rgb(13, 92, 182) transparent;
+  border-image: initial;
+  position: absolute;
+  top: 50%;
+  margin-top: -5px;
+  border-radius: 50%;
+  left: -6px;
+  transform: rotate(-45deg);
+}
+.product_content_coupon__tag::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: rgb(255, 255, 255);
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent rgb(13, 92, 182) rgb(13, 92, 182) transparent;
+  border-image: initial;
+  position: absolute;
+  top: 50%;
+  margin-top: -5px;
+  border-radius: 50%;
+  right: -6px;
+  transform: rotate(135deg);
 }
