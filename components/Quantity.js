@@ -1,27 +1,18 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
+import { connect } from "react-redux"
+import { addItem, removeItem } from "../redux/action/itemsquantity"
 import Image from "next/image"
 import * as Icons from '../components/Icon'
 import styles from '../styles/Quantity.module.css'
-function Quantity() {
-    useEffect(()=>{
-
-    }
-    ,[quantity])
-    const [quantity, setQuantity] = useState(0)
-    const handleRemove = () =>{
-        if(quantity > 0){
-            setQuantity(quantity -1)
-        }
-    }
-    const handleAdd = ()=>{
-        setQuantity(quantity + 1)
-    }
+function Quantity(props) {
+    const quantity = props.quantity
+    const {addItem, removeItem} = props
     return (
         <div>
             <div className={styles.wrapper}>
                 <button 
                     className={`${styles.button} ${styles.remove_button}`}
-                    onClick={handleRemove}
+                    onClick={removeItem}
                 >
                     <Image
                         src={Icons.IconRemove}
@@ -35,7 +26,7 @@ function Quantity() {
                 </div>
                 <button
                     className={`${styles.button} ${styles.add_button}`}
-                    onClick={handleAdd}
+                    onClick={addItem}
                 >
                     <Image
                         src={Icons.IconAdd}
@@ -48,4 +39,13 @@ function Quantity() {
         </div>
     )
 }
-export default Quantity
+
+const mapStateToProps = state =>({
+    quantity: state.itemsquantity
+})
+const mapDispatchToProps = {
+    addItem, removeItem
+}
+export default  connect(mapStateToProps, mapDispatchToProps) (Quantity)
+
+
