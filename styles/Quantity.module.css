@@ -1,0 +1,27 @@
+
+.wrapper{
+    display: flex;
+}
+.button{
+    border: 1px solid rgb(236, 236, 236);
+    width: 30px;
+    height: 30px;
+    padding: 4px;
+    background-color: rgb(255, 255, 255);
+}
+.remove_button{
+    border-radius: 4px 0 0 4px;
+    border-right: none;
+}
+.add_button{
+    border-radius:  0 4px 4px 0;
+    border-left: none;
+}
+.quantity{
+    border: 1px solid rgb(236, 236, 236);
+    width: 40px;
+    height: 30px;
+    padding: 4px;
+    text-align: center;
+    font-size: 14px;
+}

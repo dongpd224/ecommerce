@@ -15,6 +15,10 @@ import FreeshipKhongGioiHan from '../assets/freeshipkhonggioihan_icon.png'
 import TikiCard from '../assets/tiki_card.png'
 import FreeshipBlueIcon from '../assets/freeship_blue_icon.png'
 import ArrowRightBlue from '../assets/arrow_right_blue.png'
+import TikiNow from '../assets/tiki_now.png'
+import TikiFast from '../assets/tiki_fast.png'
+import IconRemove from '../assets/icons-remove.svg'
+import IconAdd from '../assets/icons-add.svg'
 export {Logo, 
     SearchIcon,
     ProfileIcon ,
@@ -31,5 +35,9 @@ export {Logo,
      FreeshipKhongGioiHan,
      TikiCard,
      FreeshipBlueIcon,
-     ArrowRightBlue
+     ArrowRightBlue,
+     TikiFast,
+     TikiNow,
+     IconRemove,
+     IconAdd
     }
