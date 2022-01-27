@@ -19,25 +19,40 @@ import TikiNow from '../assets/tiki_now.png'
 import TikiFast from '../assets/tiki_fast.png'
 import IconRemove from '../assets/icons-remove.svg'
 import IconAdd from '../assets/icons-add.svg'
-export {Logo, 
+import SocialFacebook from '../assets/social-facebook.svg'
+import SocialMessenger from '../assets/social-messenger.svg'
+import SocialPinterest from '../assets/social-pinterest.svg'
+import SocialTwitter from '../assets/social-twitter.svg'
+import SocialCopy from '../assets/social-copy.svg'
+import TikiRounded from '../assets/Tiki_rounded.png'
+import OfficialTag from '../assets/official.png'
+export {
+    Logo,
     SearchIcon,
-    ProfileIcon ,
-    ArrowDownIcon ,
-     CartIcon ,
-     FreeshipIcon, 
-     DanhChoBan,
-     ChiTu11k,
-     DealSieuHot,
-     ReVoDoi,
-     DiChoSieuSale,
-     HangMoi,
-     XuHuongThoiTrang,
-     FreeshipKhongGioiHan,
-     TikiCard,
-     FreeshipBlueIcon,
-     ArrowRightBlue,
-     TikiFast,
-     TikiNow,
-     IconRemove,
-     IconAdd
-    }
+    ProfileIcon,
+    ArrowDownIcon,
+    CartIcon,
+    FreeshipIcon,
+    DanhChoBan,
+    ChiTu11k,
+    DealSieuHot,
+    ReVoDoi,
+    DiChoSieuSale,
+    HangMoi,
+    XuHuongThoiTrang,
+    FreeshipKhongGioiHan,
+    TikiCard,
+    FreeshipBlueIcon,
+    ArrowRightBlue,
+    TikiFast,
+    TikiNow,
+    IconRemove,
+    IconAdd,
+    SocialFacebook,
+    SocialMessenger,
+    SocialPinterest,
+    SocialTwitter,
+    SocialCopy,
+    TikiRounded,
+    OfficialTag,
+}

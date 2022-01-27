@@ -1,17 +1,17 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { connect } from "react-redux"
 import { addItem, removeItem } from "../redux/action/itemsquantity"
 import Image from "next/image"
 import * as Icons from '../components/Icon'
-import styles from '../styles/Quantity.module.css'
+import quantity from '../styles/Quantity.module.css'
 function Quantity(props) {
     const quantity = props.quantity
     const {addItem, removeItem} = props
     return (
         <div>
-            <div className={styles.wrapper}>
+            <div className={quantity.wrapper}>
                 <button 
-                    className={`${styles.button} ${styles.remove_button}`}
+                    className={`${quantity.button} ${quantity.remove_button}`}
                     onClick={removeItem}
                 >
                     <Image
@@ -21,11 +21,11 @@ function Quantity(props) {
                         height={20}
                     />
                 </button>
-                <div className={styles.quantity}>
+                <div className={quantity.quantity}>
                     {quantity}
                 </div>
                 <button
-                    className={`${styles.button} ${styles.add_button}`}
+                    className={`${quantity.button} ${quantity.add_button}`}
                     onClick={addItem}
                 >
                     <Image

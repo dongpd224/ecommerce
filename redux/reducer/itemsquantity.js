@@ -1,5 +1,6 @@
 import * as t from '../types'
-const quantityReducer = (state = 0, action) =>{
+const initState = 0
+const quantityReducer = (state = initState, action) =>{
     switch (action.type){
         case t.ADD_ITEM:{
             return state + 1

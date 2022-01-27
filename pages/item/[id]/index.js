@@ -4,11 +4,47 @@ import Image from "next/image";
 import Link from "next/link";
 import StarRatingComponent from "react-star-rating-component";
 import EncodePrice from "../../../components/untils/EncodePrice";
-import Quantity from '../../../components/Quantity'
+import quantitystyles from '../../../styles/Quantity.module.css'
 import * as Icon from '../../../components/Icon'
+import { useEffect, useState } from "react";
+import { connect } from "react-redux"
+import { addItemToCart } from '../../../redux/action/cart'
 
-function ItemDetail({ resource }) {
-    const data = resource[0]
+function ItemDetail(props) {
+    const data = props.resource[0]
+    const cartData = props.cart
+    const addItemToCart = props
+    const initCartItem = {
+        id: data.id,
+        quantity: 1
+    }
+    const [cartItem, setCartItem] = useState(initCartItem)
+    const handleAddItem = () => {
+        const tempQuantity = cartItem.quantity
+        setCartItem({
+            id: data.id,
+            quantity: tempQuantity + 1
+        })
+    }
+    const handleRemoveItem = () => {
+        const tempQuantity = cartItem.quantity
+        if (tempQuantity > 0) {
+            setCartItem({
+                id: data.id,
+                quantity: tempQuantity - 1
+            })
+        }
+    }
+    const handleAddToCart = () => {
+        addItemToCart.addItemToCart(cartItem)
+        setCartItem({
+            id: data.id,
+            quantity: 1
+        })
+    }
+    useEffect(() => {
+        console.log(cartData)
+    }, [cartItem.quantity])
     return (
         <div>
             <Layout>
@@ -22,6 +58,40 @@ function ItemDetail({ resource }) {
                                         alt={data.item_name}
                                         width={444}
                                         height={444}
+                                    />
+                                </div>
+                                <div className={styles.product_action}>
+                                    <span>Chia sẻ</span>
+                                    <Image
+                                        src={Icon.SocialFacebook}
+                                        alt="Facebook"
+                                        width={28}
+                                        height={28}
+                                    />
+                                    <Image
+                                        src={Icon.SocialMessenger}
+                                        alt="SocialMessenger"
+                                        width={28}
+                                        height={28}
+
+                                    />
+                                    <Image
+                                        src={Icon.SocialPinterest}
+                                        alt="SocialPinterest"
+                                        width={28}
+                                        height={28}
+                                    />
+                                    <Image
+                                        src={Icon.SocialTwitter}
+                                        alt="SocialTwitter"
+                                        width={28}
+                                        height={28}
+                                    />
+                                    <Image
+                                        src={Icon.SocialCopy}
+                                        alt="SocialCopy"
+                                        width={28}
+                                        height={28}
                                     />
                                 </div>
                             </div>
@@ -149,12 +219,75 @@ function ItemDetail({ resource }) {
                                                         Số lượng
                                                     </div>
                                                     <div>
-                                                        <Quantity />
+                                                        <div>
+                                                            <div className={quantitystyles.wrapper}>
+                                                                <button
+                                                                    className={`${quantitystyles.button} ${quantitystyles.remove_button}`}
+                                                                    onClick={handleRemoveItem}
+                                                                >
+                                                                    <Image
+                                                                        src={Icon.IconRemove}
+                                                                        alt="remove"
+                                                                        width={20}
+                                                                        height={20}
+                                                                    />
+                                                                </button>
+                                                                <div className={quantitystyles.quantity}>
+                                                                    {cartItem.quantity}
+                                                                </div>
+                                                                <button
+                                                                    className={`${quantitystyles.button} ${quantitystyles.add_button}`}
+                                                                    onClick={handleAddItem}
+                                                                >
+                                                                    <Image
+                                                                        src={Icon.IconAdd}
+                                                                        alt="add"
+                                                                        width={20}
+                                                                        height={20}
+                                                                    />
+                                                                </button>
+                                                            </div>
+                                                        </div>
                                                     </div>
+                                                </div>
+                                                <div className={styles.product_content__atcbutton}>
+                                                    {cartItem.quantity > 0 ?
+                                                        <button
+                                                            className={`btn ${styles.product_content__button_add_to_cart}`}
+                                                            onClick={() => handleAddToCart()}
+                                                        >Chọn mua
+                                                        </button> :
+                                                        <button
+                                                            className={`btn ${styles.product_content__button_add_to_cart}`}
+                                                            onClick={() => handleAddToCart()}
+                                                            disabled
+                                                        >Chọn mua
+                                                        </button>}
                                                 </div>
                                             </div>
                                             <div className={`${styles.product_content___body_right} col-lg-4`}>
-
+                                                <div className={styles.body_right__seller_info}>
+                                                    <div className={styles.body_right__overview}>
+                                                        <Image
+                                                            src={Icon.TikiRounded}
+                                                            alt="Facebook"
+                                                            width={44}
+                                                            height={44}
+                                                            className={styles.body_right__seller_logo}
+                                                        />
+                                                        <div className={styles.body_right__overview_right}>
+                                                            <div className={styles.body_right__seller_name}>
+                                                                <span>Tiki Trading</span>
+                                                                <Image 
+                                                                    src={Icon.OfficialTag}
+                                                                    alt="Official"
+                                                                    width={74}
+                                                                    height={18}
+                                                                />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -167,6 +300,12 @@ function ItemDetail({ resource }) {
         </div>
     )
 }
+const mapStateToProps = state => ({
+    cart: state.cartState
+})
+const mapDispatchToProps = {
+    addItemToCart
+}
 export async function getServerSideProps({ params }) {
     const dataRes = await fetch(`http://localhost:3000/api/items/${params.id}`)
     const data = await dataRes.json();
@@ -176,6 +315,14 @@ export async function getServerSideProps({ params }) {
         }
     }
 }
-export default ItemDetail
+// const mapStateToProps = state =>({
+//     cart: state.cartState,
+
+// })
+// const mapDispatchToProps = {
+//     addItemToCart
+// }
+
+export default connect(mapStateToProps, mapDispatchToProps)(ItemDetail)
 
 
