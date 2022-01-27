@@ -17,7 +17,7 @@ export default function Home({items}) {
   )
 }
 export async function getServerSideProps() {
-  const resData = await fetch("http://localhost:3000/api/items")
+  const resData = await fetch(`${process.env.API_URL}/items`)
   const data = await resData.json()
   return{
       props: {

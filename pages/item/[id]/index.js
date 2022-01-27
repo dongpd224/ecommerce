@@ -308,7 +308,7 @@ const mapDispatchToProps = {
     addItemToCart
 }
 export async function getServerSideProps({ params }) {
-    const dataRes = await fetch(`http://localhost:3000/api/items/${params.id}`)
+    const dataRes = await fetch(`${process.env.API_URL}/items/${params.id}`)
     const data = await dataRes.json();
     return {
         props: {
