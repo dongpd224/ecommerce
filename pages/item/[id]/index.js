@@ -287,6 +287,7 @@ function ItemDetail(props) {
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    
                                                 </div>
                                             </div>
                                         </div>
