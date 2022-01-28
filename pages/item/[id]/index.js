@@ -11,7 +11,7 @@ import { connect } from "react-redux"
 import { addItemToCart } from '../../../redux/action/cart'
 
 function ItemDetail(props) {
-    const data = props.resource[0]
+    const data = props.resource
     const cartData = props.cart
     const addItemToCart = props
     const initCartItem = {
@@ -101,7 +101,7 @@ function ItemDetail(props) {
                                     <div className={styles.product_content__header}>
                                         <span className={styles.product_content__brand}>Thương hiệu:
                                             <Link href={`/item/${data.id}`}>
-                                                <a className="link-primary ms-2">Tiki</a>
+                                                <a className="link-primary ms-2">{data.item_brand}</a>
                                             </Link>
                                         </span>
                                         <div className={styles.product_content__title}>
@@ -308,7 +308,8 @@ const mapDispatchToProps = {
     addItemToCart
 }
 export async function getServerSideProps({ params }) {
-    const dataRes = await fetch(`${process.env.API_URL}/items/${params.id}`)
+    //${process.env.API_URL}
+    const dataRes = await fetch(`http://localhost:3001/api/items/${params.id}`)
     const data = await dataRes.json();
     return {
         props: {

@@ -5,9 +5,10 @@ import { useState } from "react"
 
 const DEFAULT_DATA = {
     item_name: "",
+    item_brand: "",
     discount_price: 0,
     img_link: "",
-    star: 5,
+    stars: 5,
 }
 
 function NewItem() {
@@ -25,7 +26,7 @@ function NewItem() {
     }
 
     const submitForm = () => {
-        axios.post("http://localhost:3000/api/items", form)
+        axios.post("../api/items", form)
             .then(_ => alert(response.data))
             .catch(err => alert(err?.response?.data));
     }
@@ -44,7 +45,19 @@ function NewItem() {
                                     onChange={handleChange}
                                     name="item_name"
                                     type="text"
-                                    placeholder="Learn Nextjs and Sanity IO" />
+                                    placeholder="Item name" />
+                            </div>
+                        </div>
+                        <div className="mt-4">
+                            <label className="label">Brand</label>
+                            <div className="control">
+                                <input
+                                    className="form-control form-control-lg"
+                                    value={form.item_brand}
+                                    onChange={handleChange}
+                                    name="item_brand"
+                                    type="text"
+                                    placeholder="Type brand" />
                             </div>
                         </div>
                         <div className="mt-4">
@@ -63,9 +76,9 @@ function NewItem() {
                             <label className="label">Star</label>
                             <div className="control">
                                 <input className="form-control form-control-lg"
-                                    value={form.star}
+                                    value={form.stars}
                                     onChange={handleChange}
-                                    name="star"
+                                    name="stars"
                                     type="number"
                                     placeholder="0">
                                 </input>
