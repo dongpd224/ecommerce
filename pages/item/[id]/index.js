@@ -5,6 +5,7 @@ import Link from "next/link";
 import StarRatingComponent from "react-star-rating-component";
 import EncodePrice from "../../../components/untils/EncodePrice";
 import quantitystyles from '../../../styles/Quantity.module.css'
+import OtherItem from "../../../components/item detail/Other Items";
 import * as Icon from '../../../components/Icon'
 import { useEffect, useState } from "react";
 import { connect } from "react-redux"
@@ -37,14 +38,10 @@ function ItemDetail(props) {
     }
     const handleAddToCart = () => {
         addItemToCart.addItemToCart(cartItem)
-        setCartItem({
-            id: data.id,
-            quantity: 1
-        })
     }
     useEffect(() => {
         console.log(cartData)
-    }, [cartItem.quantity])
+    }, [cartData])
     return (
         <div>
             <Layout>
@@ -110,7 +107,7 @@ function ItemDetail(props) {
 
                                         <div className={styles.product_content__rating}>
                                             <div className={styles.product_stars}>
-                                                <StarRatingComponent starCount={5} value={data.star} className={styles.product_stars} />
+                                                <StarRatingComponent starCount={5} value={data.stars} className={styles.product_stars} />
                                             </div>
                                             <div className={styles.product_rates}>
                                                 <span>(Xem 99 đánh giá)</span>
@@ -265,37 +262,102 @@ function ItemDetail(props) {
                                                         </button>}
                                                 </div>
                                             </div>
+                                            {/* Right card */}
                                             <div className={`${styles.product_content___body_right} col-lg-4`}>
-                                                <div className={styles.body_right__seller_info}>
-                                                    <div className={styles.body_right__overview}>
-                                                        <Image
-                                                            src={Icon.TikiRounded}
-                                                            alt="Facebook"
-                                                            width={44}
-                                                            height={44}
-                                                            className={styles.body_right__seller_logo}
-                                                        />
-                                                        <div className={styles.body_right__overview_right}>
-                                                            <div className={styles.body_right__seller_name}>
-                                                                <span>Tiki Trading</span>
-                                                                <Image 
-                                                                    src={Icon.OfficialTag}
-                                                                    alt="Official"
-                                                                    width={74}
-                                                                    height={18}
-                                                                />
+                                                <div className={styles.body_right__seller_detail}>
+                                                    <div className={styles.body_right__seller_info}>
+                                                        <div className={styles.body_right__overview}>
+                                                            <Image
+                                                                src={Icon.TikiRounded}
+                                                                alt="Facebook"
+                                                                width={44}
+                                                                height={44}
+                                                                className={styles.body_right__seller_logo}
+                                                            />
+                                                            <div className={styles.body_right__overview_right}>
+                                                                <div className={styles.body_right__seller_name}>
+                                                                    <span>Tiki Trading</span>
+                                                                    <Image
+                                                                        src={Icon.OfficialTag}
+                                                                        alt="Official"
+                                                                        width={74}
+                                                                        height={18}
+                                                                    />
+                                                                </div>
                                                             </div>
                                                         </div>
+
                                                     </div>
-                                                    
+                                                    <div className={styles.body_right__overview}>
+                                                        <div className={styles.seller__review}>
+                                                            <div className={styles.seller__review_title}>
+                                                                <span>4.6 / 5 </span><StarRatingComponent starCount={1} value={1} />
+                                                            </div>
+                                                            <div className={styles.seller__review_subtitle}>
+                                                                <span>4.3tr +</span>
+                                                            </div>
+                                                        </div>
+                                                        <div className={styles.border_left}></div>
+                                                        <div className={styles.seller__review}>
+                                                            <div className={styles.seller__review_title}>
+                                                                <span>364K+</span>
+                                                            </div>
+                                                            <div className={styles.seller__review_subtitle}>
+                                                                Theo dõi
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div className={styles.seller__action}>
+                                                        <div className={styles.seller__action_button}>
+                                                            <Image
+                                                                src={Icon.ShopIcon}
+                                                                width={20}
+                                                                height={20}
+                                                                alt="shop"
+                                                            />
+                                                            <span>Xem shop</span>
+                                                        </div>
+                                                        <div className={styles.seller__action_button}>
+                                                            <Image
+                                                                src={Icon.CrossIcon}
+                                                                width={20}
+                                                                height={20}
+                                                                alt="follow"
+                                                            />
+                                                            <span>Theo Dõi</span>
+                                                        </div>
+                                                    </div>
                                                 </div>
+                                                <div className={styles.seller__warranty}>
+                                                    <div className={styles.seller__warranty_item}>
+                                                        <span className={styles.item_left}>Thời gian bảo hành</span>
+                                                        <span className={styles.item_right}>12 Tháng</span>
+                                                    </div>
+                                                    <div className={styles.seller__warranty_item}>
+                                                        <span className={styles.item_left}>Hình thức bảo hành</span>
+                                                        <span className={styles.item_right}>Hóa đơn</span>
+                                                    </div>
+                                                    <div className={styles.seller__warranty_item}>
+                                                        <span className={styles.item_left}>Nơi bảo hành</span>
+                                                        <span className={styles.item_right}>Chính hãng</span>
+                                                    </div>
+                                                    <div className={styles.seller__warranty_item}>
+                                                        <span className={styles.item_left}>Hướng dẫn bảo hành</span>
+                                                        <span className={styles.item_right}>Website</span>
+                                                    </div>
+                                                </div>
+                                        
+                                                
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
+                    <OtherItem items = {props.items}/>
                 </div>
             </Layout>
         </div>
@@ -307,13 +369,17 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = {
     addItemToCart
 }
+
 export async function getServerSideProps({ params }) {
     //${process.env.API_URL}
     const dataRes = await fetch(`http://localhost:3001/api/items/${params.id}`)
+    const dataRes2 = await fetch(`http://localhost:3001/api/items`)
+    const listItems = await dataRes2.json();
     const data = await dataRes.json();
     return {
         props: {
-            resource: data
+            resource: data,
+            items: listItems
         }
     }
 }

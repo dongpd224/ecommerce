@@ -97,7 +97,7 @@ function NewItem() {
                                     placeholder="Nextjs.com" />
                             </div>
                         </div>
-                        <div className="mt-4 d-flex justify-content-start">
+                        <div className="mt-4 mb-4 d-flex justify-content-start">
                             <div className="control me-3">
                                 <button
                                     type="submit"

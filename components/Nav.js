@@ -3,7 +3,11 @@ import Image from 'next/image'
 import * as Icon from './Icon'
 import Link from 'next/link'
 import CategoryTabBar from './CategoryTabBar'
-function Nav() {
+import { connect } from "react-redux"
+import { useEffect } from 'react'
+function Nav(props) {
+    const cartData = props.cart
+    const cartQuantity = cartData.cart.length
     return (
         <>
         <div className="container-fluid primary-background-color">
@@ -109,7 +113,7 @@ function Nav() {
                                             height={36}
                                         />
                                         <span className={`${style.user_style__cart_quantity}`}>
-                                            0
+                                            {cartQuantity> 0 ? cartQuantity : 0}
                                         </span>
                                     </span>
 
@@ -129,4 +133,7 @@ function Nav() {
         </>
     )
 }
-export default Nav
+const mapStateToProps = state => ({
+    cart: state.cartState
+})
+export default connect(mapStateToProps) (Nav)

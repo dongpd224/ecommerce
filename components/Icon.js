@@ -26,6 +26,8 @@ import SocialTwitter from '../assets/social-twitter.svg'
 import SocialCopy from '../assets/social-copy.svg'
 import TikiRounded from '../assets/Tiki_rounded.png'
 import OfficialTag from '../assets/official.png'
+import ShopIcon from '../assets/shop_icon.png'
+import CrossIcon from '../assets/cross_icon.png'
 export {
     Logo,
     SearchIcon,
@@ -55,4 +57,6 @@ export {
     SocialCopy,
     TikiRounded,
     OfficialTag,
+    ShopIcon,
+    CrossIcon
 }
