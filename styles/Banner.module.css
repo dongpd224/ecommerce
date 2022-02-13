@@ -1,15 +1,25 @@
 .banner{
-    min-height: 274px;  
+    max-height: 274px;  
     margin-top: 15px;
     margin-bottom: 15px;
 }
 .left_banner{
+    max-height: 274px;  
     margin: 0 0 0 -12px;
-    border-radius: 4px;
+ 
+    z-index: 999;
     overflow: hidden;
+    cursor: pointer;
+}
+.left_banner__img img{
+    border-radius: 4px;
 }
 .right_banner{
     margin: 0 -12px 0 0;
+    max-height: 274px;  
+}
+.right_banner__img img{
     border-radius: 4px;
     overflow: hidden;
+    cursor: pointer;
 }

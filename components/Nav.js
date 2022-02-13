@@ -4,7 +4,6 @@ import * as Icon from './Icon'
 import Link from 'next/link'
 import CategoryTabBar from './CategoryTabBar'
 import { connect } from "react-redux"
-import { useEffect } from 'react'
 function Nav(props) {
     const cartData = props.cart
     const cartQuantity = cartData.cart.length

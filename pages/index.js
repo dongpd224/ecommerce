@@ -1,13 +1,13 @@
 import Layout from "../components/Layout"
 import CardList from '../components/CardList'
-import Banner from "../components/Banner"
 import SuggestionBar from "../components/SuggestionBar"
+import BannerSlider from "../components/BannerSlider"
 
 export default function Home({items}) {
   return (
     <div>
       <Layout>
-        <Banner />
+        <BannerSlider />
         <SuggestionBar />
         <div className="container">
           <CardList items={items}/>
