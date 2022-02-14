@@ -4,6 +4,8 @@ import * as img from './Image'
 import style from '../styles/Banner.module.css'
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { useEffect, useState } from "react";
+
 function NextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -14,6 +16,7 @@ function NextArrow(props) {
         />
     );
 }
+
 function PrevArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -24,6 +27,7 @@ function PrevArrow(props) {
         />
     );
 }
+
 function BannerSlider() {
     const settings = {
         dots: true,
@@ -43,13 +47,14 @@ function BannerSlider() {
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />
     };
+
     return (
         <>
             <div className={`container ${style.banner} d-flex justify-content-center`}>
                 <div className="row justify-content-between">
                     <div className="container">
                         <div className="row justify-content-between">
-                            <div className={`${style.left_banner} col-lg-8 col-md-12`}>
+                            <div className={`${style.left_banner} col-lg-8 d-none d-xl-block`}>
                                 <div className={style.left_banner__img}>
                                 <Slider
                                     {...settings}
@@ -57,26 +62,25 @@ function BannerSlider() {
                                     <Image
                                         src={img.LeftBanner1}
                                         alt="Banner_1"
-                                        width={824}
+                                        width={874}
                                         height={274}
                                     />
                                     <Image
                                         src={img.LeftBanner2}
                                         alt="Banner_2"
-                                        width={824}
+                                        width={874}
                                         height={278}
                                     />
                                     <Image
                                         src={img.LeftBanner3}
                                         alt="Banner_3"
-                                        width={824}
+                                        width={874}
                                         height={274}
                                     />
                                 </Slider>
                                 </div>
                             </div>
-                            <div className={`${style.right_banner} col-lg-4 col-md-12`}>
-
+                            <div className={`${style.right_banner} col-lg-4`}>
                                 <div className={style.right_banner__img}>
                                     <Image
                                         src={'https://salt.tikicdn.com/cache/w400/ts/banner/22/3a/c1/d08f74952514ddae0cea46fea4fadd3e.png'}
