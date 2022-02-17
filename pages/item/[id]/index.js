@@ -372,7 +372,7 @@ const mapDispatchToProps = {
 
 export async function getServerSideProps({ params }) {
     //${process.env.API_URL}
-    const dataRes = await fetch(`${process.env.API_URL}/${params.id}`)
+    const dataRes = await fetch(`${process.env.API_URL}/items/${params.id}`)
     const dataRes2 = await fetch(`${process.env.API_URL}/items`)
     const listItems = await dataRes2.json();
     const data = await dataRes.json();
