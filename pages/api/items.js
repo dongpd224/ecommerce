@@ -1,5 +1,11 @@
 import axios from "axios";
 export default async function (req, res) {
+  if (req.method === "GET") {
+    // ${process.env.API_URL}
+    const dataRes = await fetch(`http://localhost:3001/api/items`);
+    const data = await dataRes.json();
+    return res.send(data);
+  }
   if (req.method === "POST" || req.method === "PATCH") {
     const { item_name, item_brand, discount_price, img_link, stars} = req.body;
     //${process.env.API_URL}

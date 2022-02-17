@@ -28,6 +28,12 @@ import TikiRounded from '../assets/Tiki_rounded.png'
 import OfficialTag from '../assets/official.png'
 import ShopIcon from '../assets/shop_icon.png'
 import CrossIcon from '../assets/cross_icon.png'
+import BoCongThuong1 from '../assets/bo-cong-thuong.svg'
+import BoCongThuong2 from '../assets/bo-cong-thuong-2.png'
+import QRCode from '../assets/qrcode.png'
+import PlayStore from '../assets/playstore.png'
+import AppStore from '../assets/appstore.png'
+import Youtube from '../assets/youtube.png'
 export {
     Logo,
     SearchIcon,
@@ -58,5 +64,11 @@ export {
     TikiRounded,
     OfficialTag,
     ShopIcon,
-    CrossIcon
+    CrossIcon,
+    BoCongThuong1,
+    BoCongThuong2,
+    Youtube,
+    QRCode,
+    PlayStore,
+    AppStore
 }

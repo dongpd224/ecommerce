@@ -1,4 +1,5 @@
 .footer{
+    margin-top: 16px;
     padding: 16px 0px;
     padding-left: 15px;
     padding-right: 15px;
@@ -17,4 +18,45 @@
     color: rgb(56, 56, 61);
     margin-bottom: 12px;
     margin-top: 0px;
+}
+
+.hotline{
+    margin-bottom: 8px;    font-size: 12px;
+    line-height: 16px;
+    color: rgb(128, 128, 137);
+    margin-bottom: 12px;
+    margin-top: 0px;
+}
+.hotline_tel{
+    color: rgb(56, 56, 61);
+    font-weight: 500;
+    cursor: pointer;
+}
+.small_text{
+    display: block;
+    margin-bottom: 8px;
+    color: rgb(128, 128, 137);
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: normal;
+    cursor: pointer;
+}
+.small_text:hover{
+    color: rgb(106, 106, 114);
+    text-decoration: underline;
+}
+.images{
+    align-items: center;
+    gap: 8px;
+}
+.images img{
+    cursor: pointer;
+}
+.apps_store{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.apps_store img:first-child{
+    margin-bottom: 4px!important;
 }
