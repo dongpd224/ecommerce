@@ -34,6 +34,7 @@ import QRCode from '../assets/qrcode.png'
 import PlayStore from '../assets/playstore.png'
 import AppStore from '../assets/appstore.png'
 import Youtube from '../assets/youtube.png'
+import Trash from '../assets/trash.svg'
 export {
     Logo,
     SearchIcon,
@@ -70,5 +71,6 @@ export {
     Youtube,
     QRCode,
     PlayStore,
-    AppStore
+    AppStore,
+    Trash
 }

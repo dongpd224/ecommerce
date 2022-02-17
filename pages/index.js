@@ -19,7 +19,6 @@ export default function Home() {
         <SuggestionBar />
         <div className="container">
           <CardList items={data} />
-          {console.log(data)}
         </div>
       </Layout>
     </div>
@@ -27,7 +26,7 @@ export default function Home() {
 }
 // export async function getServerSideProps() {
 //   //${process.env.API_URL}
-//   const resData = await fetch(`${process.env.API_URL}items`)
+//   const resData = await fetch(`${process.env.API_URL}/items`)
 //   const data = await resData.json()
 //   return{
 //       props: {
