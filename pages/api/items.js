@@ -2,14 +2,14 @@ import axios from "axios";
 export default async function (req, res) {
   if (req.method === "GET") {
     // ${process.env.API_URL}
-    const dataRes = await fetch(`http://localhost:3001/api/items`);
+    const dataRes = await fetch(`${process.env.API_URL}/items`);
     const data = await dataRes.json();
     return res.send(data);
   }
   if (req.method === "POST" || req.method === "PATCH") {
     const { item_name, item_brand, discount_price, img_link, stars} = req.body;
     //${process.env.API_URL}
-    let url =  `http://localhost:3001/api/items`;
+    let url =  `${process.env.API_URL}/items`;
     if (!item_name || !item_brand || !discount_price || !img_link || !stars) {
       return res.status(422).send("Data are missing!");
     }

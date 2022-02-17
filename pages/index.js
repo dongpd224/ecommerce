@@ -27,7 +27,7 @@ export default function Home() {
 }
 // export async function getServerSideProps() {
 //   //${process.env.API_URL}
-//   const resData = await fetch(`http://localhost:3001/api/items`)
+//   const resData = await fetch(`${process.env.API_URL}items`)
 //   const data = await resData.json()
 //   return{
 //       props: {

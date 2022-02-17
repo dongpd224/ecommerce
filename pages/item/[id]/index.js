@@ -372,8 +372,8 @@ const mapDispatchToProps = {
 
 export async function getServerSideProps({ params }) {
     //${process.env.API_URL}
-    const dataRes = await fetch(`http://localhost:3001/api/items/${params.id}`)
-    const dataRes2 = await fetch(`http://localhost:3001/api/items`)
+    const dataRes = await fetch(`${process.env.API_URL}/${params.id}`)
+    const dataRes2 = await fetch(`${process.env.API_URL}/items`)
     const listItems = await dataRes2.json();
     const data = await dataRes.json();
     return {
