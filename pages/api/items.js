@@ -1,5 +1,5 @@
 import axios from "axios";
-export default async function (req, res) {
+export default async function Items(req, res) {
   if (req.method === "GET") {
     // ${process.env.API_URL}
     const dataRes = await fetch(`${process.env.API_URL}/items`);
