@@ -14,7 +14,9 @@ const cartReducer = (state = initState, action) => {
             }
             break;
         }
-
+        case t.REMOVE_ALL:{
+            return initState
+        }
         case t.SHOW_CART: {
             return{
                 ...state

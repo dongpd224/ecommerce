@@ -17,7 +17,7 @@ function ItemDetail(props) {
     const addItemToCart = props
     const initCartItem = {
         id: data.id,
-        quantity: 1
+        quantity: 0
     }
     const [cartItem, setCartItem] = useState(initCartItem)
     const handleAddItem = () => {
@@ -38,6 +38,7 @@ function ItemDetail(props) {
     }
     const handleAddToCart = () => {
         addItemToCart.addItemToCart(cartItem)
+        setCartItem(initCartItem)
     }
     useEffect(() => {
         console.log(cartData)

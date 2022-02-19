@@ -1,6 +1,5 @@
 import Layout from "../components/Layout"
 import { connect } from "react-redux"
-import { addItemToCart } from '../redux/action/cart'
 import { useEffect, useState } from "react"
 import style from '../styles/checkout.module.css'
 import Image from "next/image"
@@ -8,21 +7,30 @@ import * as Icon from '../components/Icon'
 import CartItem from "../components/CartItem"
 import EncodePrice from "../components/untils/EncodePrice"
 import Link from "next/link"
+import { removeCart } from '../redux/action/cart'
 function Checkout(props) {
     const cartData = props.cart
-    const addItemToCart = props
+    const removeCart = props
     const [childData, setChildData] = useState({})
     const [listCarts, setListCarts] = useState([])
     let totalPrice = 0
-    for (const i = 1; i < listCarts.length; i++) {
-        let quantity = cartData.cart[i - 1].quantity
-        totalPrice += (listCarts[i].discount_price * quantity)
+
+    if (listCarts.length > 0) {
+        listCarts.map((item, index) => {
+            if (cartData.cart.length > 0) {
+                if (index > 0)
+                    totalPrice += (item.discount_price * cartData.cart[index - 1].quantity)
+            }
+        })
     }
+
     useEffect(() => {
         const data = childData
         setListCarts([...listCarts, data])
-        console.log(totalPrice)
     }, [childData])
+    const handleRemoveAll = () => {
+        removeCart.removeCart()
+    }
     return (
         <>
             <Layout>
@@ -75,7 +83,7 @@ function Checkout(props) {
                                                 Thành tiền
                                             </div>
                                             <div className={style.col_5}>
-                                                <span className={style.remove_all}>
+                                                <span className={style.remove_all} onClick={handleRemoveAll}>
                                                     <Image
                                                         src={Icon.Trash}
                                                         alt="Delete"
@@ -118,7 +126,7 @@ const mapStateToProps = state => ({
     cart: state.cartState
 })
 const mapDispatchToProps = {
-    addItemToCart
+    removeCart
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Checkout)
