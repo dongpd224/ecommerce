@@ -11,7 +11,12 @@ export default function Home() {
   const { data, error } = useSWR('../api/items', fetcher)
 
   if (error) return <div>Failed to load{console.log(error)}</div>
-  if (!data) return <div>Loading...</div>
+  if (!data) return (
+    <Layout>
+      <BannerSlider />
+      <SuggestionBar /><div>Loading...</div>
+    </Layout>
+  )
   return (
     <div>
       <Layout>
