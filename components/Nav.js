@@ -101,7 +101,7 @@ function Nav(props) {
                                 </div>
 
                             </div>
-                            <div className={`${style.user_style__cart_item} d-none d-lg-block`}>
+                            <div className={`${style.user_style__cart_item}`}>
                                 <Link href={`/checkout`}>
                                     <a className={`${style.user_style__cart_item_inner}`}>
                                         <span>
